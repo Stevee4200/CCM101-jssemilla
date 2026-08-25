@@ -2,13 +2,6 @@
 
 ## Linux Environment Investigation
 
-**Name:** Jack Steve M. Semilla
-**Course/Section:** BSIT-3D
-**Platform Used:** KillerCoda Playground
-**Operating System:** Ubuntu Linux
-
----
-
 ## 1. System Information
 
 | Information              | Findings                                      |
