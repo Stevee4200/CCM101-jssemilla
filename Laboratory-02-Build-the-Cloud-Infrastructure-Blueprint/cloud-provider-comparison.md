@@ -85,3 +85,22 @@ AWS, Microsoft Azure, and Google Cloud Platform provide similar core cloud infra
 * **Microsoft Learn** – Used to research Azure Virtual Machines, Azure Blob Storage, Azure Virtual Network, Microsoft Entra ID, and Azure RBAC.
 * **Google Cloud Documentation** – Used to identify equivalent Google Cloud services, including Compute Engine, Cloud Storage, VPC, and Google Cloud IAM.
 * **ChatGPT** – Used as an assistance tool to help organize the comparison, improve the Markdown formatting, explain cloud infrastructure concepts, and structure the report.
+
+
+## References
+
+Amazon Web Services. (n.d.). *Amazon EC2 documentation*. AWS Documentation. [AWS Documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-iam.html?utm_source=chatgpt.com)
+
+Amazon Web Services. (n.d.). *Amazon S3 documentation*. AWS Documentation. [AWS Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-iam.html?utm_source=chatgpt.com)
+
+Amazon Web Services. (n.d.). *Amazon Virtual Private Cloud documentation*. AWS Documentation. [AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/security-iam.html?utm_source=chatgpt.com)
+
+Amazon Web Services. (n.d.). *AWS Identity and Access Management documentation*. AWS Documentation. [AWS Documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-iam.html?utm_source=chatgpt.com)
+
+Google Cloud. (n.d.). *Compute Engine documentation*. Google Cloud Documentation. [Google Cloud Documentation](https://docs.cloud.google.com/compute/docs/authentication?hl=en&utm_source=chatgpt.com)
+
+Google Cloud. (n.d.). *Identity and Access Management documentation*. Google Cloud Documentation. [Google Cloud Documentation](https://docs.cloud.google.com/compute/docs/access/iam?hl=en&utm_source=chatgpt.com)
+
+Microsoft. (n.d.). *Authorize access to blobs using Microsoft Entra ID*. Microsoft Learn. [Microsoft Learn](https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-access-azure-active-directory?utm_source=chatgpt.com)
+
+Microsoft. (n.d.). *Azure built-in roles for compute*. Microsoft Learn. [Microsoft Learn](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/compute?utm_source=chatgpt.com)
