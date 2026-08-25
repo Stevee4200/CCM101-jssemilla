@@ -97,7 +97,7 @@ Operating systems are important because cloud servers need software that manages
 KillerCoda provides a Linux environment where users can interact with the Ubuntu operating system through the terminal. Commands such as the following were used to identify the operating system and kernel:
 
 ```bash
-lsb_release -d
+lsb_release -a
 uname -r
 ```
 
