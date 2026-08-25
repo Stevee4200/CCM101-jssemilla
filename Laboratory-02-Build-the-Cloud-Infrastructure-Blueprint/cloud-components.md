@@ -75,12 +75,6 @@ In the KillerCoda Linux environment, the IP address and network configuration ca
 hostname -I
 ```
 
-or:
-
-```bash
-ip addr
-```
-
 These commands help identify the network connection of the Linux environment.
 
 ---
