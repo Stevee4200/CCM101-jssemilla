@@ -45,7 +45,6 @@ Storage is important in cloud computing because applications and users need a re
 In the KillerCoda Linux environment, storage can be examined using commands such as:
 
 ```bash
-lsblk
 df -h
 ```
 
