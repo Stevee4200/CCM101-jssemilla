@@ -14,7 +14,7 @@ The Microsoft Azure Portal is a web-based management interface used to create, c
 
 Official Azure Portal:
 
-https://portal.azure.com/
+https://learn.microsoft.com/azure/
 
 ## Four Core Services
 
