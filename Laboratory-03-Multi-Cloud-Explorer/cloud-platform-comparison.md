@@ -34,10 +34,14 @@ I would personally choose **Microsoft Azure** because it is well integrated with
 
 AWS, Microsoft Azure, and Google Cloud all provide similar basic cloud services, but each platform has different strengths. AWS is known for its wide range of services, Azure is strong in Microsoft integration, and Google Cloud is well known for AI, data technologies, and Kubernetes.
 
-## References
+## Equivalent Cloud Services
 
-Amazon Web Services. (2026). *Amazon Web Services*. https://aws.amazon.com/
+The following table shows equivalent services offered by AWS, Microsoft Azure, and Google Cloud Platform. Although the services have different names, they provide similar functions for cloud infrastructure.
 
-Microsoft. (2026). *Microsoft Azure*. https://azure.microsoft.com/
-
-Google Cloud. (2026). *Google Cloud*. https://cloud.google.com/
+| Service Category | AWS | Azure | GCP |
+|---|---|---|---|
+| **Virtual Machine** | Amazon EC2 | Azure Virtual Machines | Compute Engine |
+| **Object Storage** | Amazon S3 | Azure Blob Storage | Cloud Storage |
+| **Identity Management** | AWS IAM | Microsoft Entra ID | Cloud IAM |
+| **SQL Database** | Amazon RDS | Azure SQL Database | Cloud SQL |
+| **Kubernetes** | Amazon EKS | Azure Kubernetes Service (AKS) | Google Kubernetes Engine (GKE) |
