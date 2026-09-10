@@ -13,6 +13,7 @@ AWS has a large global infrastructure made up of Regions, Availability Zones, an
 The AWS Management Console is a web-based interface used to access and manage AWS services. It allows users to create and manage resources, monitor services, manage users, and view billing information.
 
 Official AWS Management Console:
+
 https://aws.amazon.com/console/
 
 ## Four Core Services
