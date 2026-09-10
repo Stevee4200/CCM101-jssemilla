@@ -1,4 +1,3 @@
-<img width="1918" height="998" alt="image" src="https://github.com/user-attachments/assets/6d94e773-76ff-472a-8c27-a76a23b068d7" /># Google Cloud Platform (GCP) Research
 
 ## Brief Overview
 
