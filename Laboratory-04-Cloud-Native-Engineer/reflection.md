@@ -1,29 +1,11 @@
+Mission Reflection
 
----
+During this Docker laboratory, I learned that containers can make application deployment much faster and easier compared to using a Virtual Machine. When using a VM, we usually need to install an operating system first and wait for it to boot before we can install and run an application. With Docker, we can simply download an image and start a container in a few seconds. I experienced this myself when I deployed the Nginx web server using only a few commands.
 
-# Checkpoint 7 — `reflection.md`
+I also learned why port mapping is important. The command -p 8080:80 connects port 8080 on the host machine to port 80 inside the container. This allows me to access the Nginx web server from the host using localhost:8080. Without port mapping, it would be difficult for the host to communicate directly with the web server inside the container.
 
-Your instructor requires **250–350 words**, so I made this around **300 words** and kept the English simple and natural.
+Another thing I learned is what happens when a container is removed using docker rm. The container and the data stored only inside its writable layer are removed. This made me realize that important data should be stored using volumes or another form of persistent storage if it needs to remain available after removing a container.
 
-```markdown
-# Mission Reflection
+I also think containerization can improve the way developers and IT operations teams work together. Developers can create an application inside a container with its required dependencies, and the same container can be used for testing and deployment. This can reduce problems caused by differences between development and production environments and make teamwork more organized.
 
-## 1. How does the boot time and setup process of a Docker container compare to installing an operating system on a Virtual Machine?
-
-A Docker container is much faster to start compared with installing and booting a complete operating system on a Virtual Machine. A VM needs to allocate hardware resources and load an entire guest operating system before the application can run. Docker containers share the host operating system kernel, so they only need the application and its required files. In this activity, I was able to download the Nginx image and start the web server using only a few commands.
-
-## 2. Why is port mapping (-p 8080:80) necessary when running a web server inside a container?
-
-Port mapping allows users outside the container to access a service running inside it. In my activity, `-p 8080:80` connected port 8080 on the host machine to port 80 inside the Nginx container. Without this mapping, the Nginx web server would not be directly accessible through the host's port 8080.
-
-## 3. What happens to the data inside a container when you use the docker rm command?
-
-The `docker rm` command removes the container and its writable container filesystem. Any data stored only inside the container can be lost when the container is removed. This shows why persistent data should normally be stored using Docker volumes or other external storage.
-
-## 4. How do you think containerization changes the way software developers and IT operations teams work together (DevOps)?
-
-Containerization can make cooperation between developers and IT operations easier because applications can be packaged with their required dependencies. Developers can test the same container environment that operations teams deploy. This helps reduce differences between development and production environments and can make application deployment more consistent and efficient.
-
-## 5. How is your GitHub portfolio evolving?
-
-My GitHub portfolio is becoming more organized and practical as I add more laboratory projects. This Docker activity shows that I can use Linux, Docker commands, containers, and Markdown documentation. By continuing to add projects and technical documentation, my GitHub portfolio can demonstrate the skills I am developing in cloud computing and IT.
+Lastly, my GitHub portfolio is slowly improving as I add more laboratory activities and technical projects. Before, my GitHub mainly contained school files, but now I am adding projects involving Linux, cloud computing, Docker, and technical documentation. I believe these projects can help show the skills I am learning as an IT student and give me a better portfolio for future opportunities.
