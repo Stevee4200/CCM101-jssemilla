@@ -1,5 +1,3 @@
-Mission Reflection
-
 During this Docker laboratory, I learned that containers can make application deployment much faster and easier compared to using a Virtual Machine. When using a VM, we usually need to install an operating system first and wait for it to boot before we can install and run an application. With Docker, we can simply download an image and start a container in a few seconds. I experienced this myself when I deployed the Nginx web server using only a few commands.
 
 I also learned why port mapping is important. The command -p 8080:80 connects port 8080 on the host machine to port 80 inside the container. This allows me to access the Nginx web server from the host using localhost:8080. Without port mapping, it would be difficult for the host to communicate directly with the web server inside the container.
