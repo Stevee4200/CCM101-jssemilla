@@ -35,10 +35,6 @@ docker-compose down
 - Documenting technical work using Markdown.
 - Maintaining a cloud computing portfolio on GitHub.
 
-## Screenshots
-
-Deployment evidence is stored in the `screenshots/` folder.
-
 ## Tools and Assistance
 
 Tools used: KillerCoda, Docker, Docker Compose, GitHub, and Markdown. AI assistance was used to clarify instructions and support troubleshooting; the final work was reviewed and adapted by the student.
