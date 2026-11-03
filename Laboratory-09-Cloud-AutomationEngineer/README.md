@@ -88,13 +88,6 @@ crontab -l
 - **Linux Administration:** Improved my skills in navigating directories, creating files, and managing scripts.
 - **Cloud Automation:** Understood how automation reduces repetitive manual work and improves the management of cloud servers.
 
-## Screenshots
-
-The screenshots for this laboratory are stored in the `screenshots/` folder.
-
-- `script-execution.png` – Shows the script execution, file permissions, and generated backup archive.
-- `cron-schedule.png` – Shows the successfully installed Cron schedule.
-
 ## Conclusion
 
 This laboratory gave me practical experience in automating server backup tasks using Bash and Cron. I learned that automation is useful in cloud computing because it reduces manual work, saves time, and helps ensure that important data is backed up regularly.
