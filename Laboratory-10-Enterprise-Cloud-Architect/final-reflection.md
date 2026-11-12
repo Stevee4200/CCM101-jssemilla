@@ -1,51 +1,57 @@
-# Final Reflection
+# Final Reflection: My CloudNova Journey (CCM101)
 
 ## Introduction
 
-Finishing Missions 1 to 10 in CCM101 gave me a deeper understanding of cloud computing and its importance in modern technology. Throughout these activities, I gained knowledge about cloud services, hardware resources, networking, Linux, system security, and automation.
+My experience in CCM101 has helped me develop a better understanding of cloud computing and its practical applications. What started as a training activity as a Junior Cloud Infrastructure Engineer Trainee at CloudNova Technologies became an opportunity to learn and perform tasks related to cloud architecture. Each laboratory introduced new concepts and practical skills that helped prepare me for the next activity.
 
-I learned that cloud computing involves more than saving files online or accessing applications. It also requires managing servers, configuring services, securing important information, and maintaining systems to ensure they operate correctly.
+### Laboratory 01: Welcome to the Cloud
 
-## Learning Experience from Missions 1–9
+In the first laboratory, I learned the fundamentals of using a Linux environment through KillerCoda. I practiced basic Linux commands, checked system information, and organized files and directories. I also learned how to document my activities using Markdown and upload my work to GitHub. This activity helped me understand the importance of keeping technical records organized.
 
-The first nine missions helped me become familiar with different areas of cloud computing through research and hands-on activities.
+### Laboratory 02: Build the Cloud Infrastructure Blueprint
 
-I studied the basic elements of cloud infrastructure, such as computing power, storage, and networking. I also explored major cloud platforms, including Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). Through these activities, I understood the importance of selecting suitable cloud resources based on the needs of a project.
+This laboratory introduced me to the main components of cloud infrastructure. I explored the available hardware and software resources in a Linux environment and learned about computing, storage, networking, and identity services. Through this activity, I understood how these components work together to support cloud-based systems.
 
-I also practiced using Linux commands to examine system information, processor details, memory consumption, and disk capacity. This improved my understanding of Linux and how computer resources are monitored and managed on a server.
+### Laboratory 03: Multi-Cloud Explorer
 
-Using PowerShell gave me additional experience with automation. I learned that scripts can reduce manual work and make repeated tasks easier and faster to perform.
+During this activity, I explored three major cloud service providers: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). I compared their services and studied which platforms would be suitable for different business needs. I also learned about the advantages and possible limitations of using multiple cloud providers, including the risk of depending too much on a single provider.
 
-Aside from these technical skills, I also discovered the importance of system security, proper user permissions, firewall configurations, and efficient resource management.
+### Laboratory 04: Cloud-Native Engineer
 
-## Experience in Mission 10 – Enterprise Cloud Architect
+This laboratory helped me understand the difference between virtual machines and containers. I gained practical experience using Docker commands to download images, create and manage containers, and run an Nginx web server. Through these activities, I learned how containers make application deployment faster, easier, and more portable.
 
-In Mission 10, I was able to combine the knowledge and skills I developed from the previous missions into one practical project.
+### Laboratory 05: Cloud Data Engineer
 
-I created **CloudNova**, a website hosting environment using Ubuntu Server through Oracle VirtualBox. I configured the network settings to allow my Windows laptop to communicate with the Ubuntu Server and access its WordPress website.
+In this laboratory, I explored how cloud platforms store and manage different types of data. I learned about Object Storage and its uses in modern applications. I also deployed a MinIO Object Storage server using Docker, created storage buckets, and uploaded objects. Additionally, I studied the differences between Block, File, and Object Storage and understood their different purposes.
 
-I also used Docker and Docker Compose to deploy WordPress and MariaDB in separate but connected containers. During this activity, I learned that Docker volumes are important because they preserve application and database information even when containers are restarted or recreated.
+### Laboratory 06: Cloud Deployment Engineer
 
-For the security configuration, I set up UFW, limited SSH access, turned off password-based authentication, and configured SSH key authentication. I also applied Docker firewall rules to control access to the WordPress application.
+This activity introduced me to Infrastructure as Code (IaC) through Docker Compose. I created a YAML configuration to deploy Nextcloud and MariaDB together instead of setting up each container separately. I also learned how multiple containers communicate through a Docker network. This experience showed me how deployment processes can become more organized and efficient through automation.
 
-Another important task was developing an automated database backup system using Bash. The script creates database backups, compresses the files, verifies their validity, and deletes backup files older than seven days. I also configured Cron to execute the backup process automatically every day.
+### Laboratory 07: Cloud Operations Engineer
 
-Through this project, I gained a better understanding of how server configuration, application deployment, networking, security, and automation work together.
+In this laboratory, I learned that managing cloud infrastructure requires continuous monitoring. I used Linux commands such as `free -h`, `df -h`, and `top` to check memory, disk space, and CPU performance. I also deployed an Nginx container, generated web traffic, and examined its access logs. These activities helped me understand how monitoring can identify system problems and maintain server performance.
 
-## Challenges and Lessons Learned
+### Laboratory 08: Cloud Security Engineer
 
-While completing the project, I experienced some difficulties with network configuration, SSH connections, and firewall settings.
+This laboratory focused on protecting cloud infrastructure from possible security threats. I checked active ports and configured the UFW firewall using a Default Deny policy. I also allowed only the necessary connections, such as SSH and HTTP on port 8080. Through this activity, I learned about the Principle of Least Privilege (PoLP) and why limiting unnecessary access is important for server security.
 
-There were times when certain configurations affected communication between my Windows laptop and Ubuntu Server, as well as the incoming connections to Docker containers. To solve these problems, I had to review my settings, examine the commands, and perform several tests.
+### Laboratory 09: Cloud Automation Engineer
 
-Developing the backup script also required additional learning. I needed to understand how to connect to the database, generate backup files, compress the data, and automate the process through Cron.
+In this activity, I discovered how automation can reduce repetitive administrative work. I created a Bash script to back up sample application data and learned how to change file permissions using `chmod` so the script could run. I also configured a Cron job to execute the backup automatically at a scheduled time. This laboratory taught me that automation helps save time, reduce manual mistakes, and improve system maintenance.
 
-These experiences taught me that technical work requires patience, careful testing, and attention to detail. I also realized that understanding a command before running it is important, especially when changing security configurations or handling important data.
+### Laboratory 10: Enterprise Cloud Architect
+
+The final laboratory allowed me to combine the knowledge and skills I gained from the previous activities. I developed CloudNova, a website infrastructure using WordPress and MariaDB running inside Docker containers on an Ubuntu Server virtual machine through Oracle VirtualBox.
+
+I configured NAT and Host-only networking to connect my Windows laptop to the server. I also improved server security by setting up SSH authentication using ED25519 keys, configuring firewall rules, and managing Docker volumes for permanent data storage.
+
+Another important task was creating a Bash script for automatic database backups and scheduling it through Cron. Finally, I documented the system architecture, deployment procedures, security configurations, and maintenance instructions in an operational manual. This project helped me understand how the different parts of cloud infrastructure work together in an actual application.
 
 ## Conclusion
 
-Overall, completing CCM101 improved my knowledge of cloud computing and gave me practical experience in managing a server environment.
+Overall, completing the ten laboratories gave me valuable knowledge and practical experience in cloud computing. I started by learning basic Linux commands and gradually gained experience with cloud platforms, virtualization, Docker, networking, storage, security, and automation.
 
-Throughout the ten missions, I developed skills in cloud platforms, Linux, PowerShell, virtualization, Docker, networking, cybersecurity, and automation.
+The CloudNova project became an opportunity to apply the lessons I learned throughout the course. I also realized that working with cloud infrastructure requires patience, problem-solving skills, careful planning, and continuous learning.
 
-The CloudNova project demonstrates the knowledge I gained and the challenges I overcame during this course. Although I still have many things to explore and improve, the activities gave me a strong starting point for future IT projects and helped prepare me for my goal of becoming an IT professional.
+Although I still have many things to improve and explore, CCM101 has provided me with a strong foundation for future IT projects and my goal of becoming a skilled IT professional.
