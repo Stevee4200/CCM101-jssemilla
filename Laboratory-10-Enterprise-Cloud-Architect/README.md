@@ -10,15 +10,15 @@ It also provides additional features such as network security, protected remote 
 
 ## Project Objectives
 
-- Build and configure a Linux server using Oracle VirtualBox.
-- Establish network communication between the Windows laptop and the virtual machine.
-- Set up Docker and Docker Compose for container management.
-- Run WordPress and MariaDB using separate connected containers.
-- Configure persistent storage to protect application and database files.
-- Apply firewall configurations and secure SSH authentication.
-- Develop a Bash script to automate database backups.
-- Use Cron to run backup tasks on a scheduled basis.
-- Prepare documentation covering deployment, security, and system maintenance.
+- Set up a Linux server using Oracle VirtualBox.
+- Configure network connections between the laptop and the virtual machine.
+- Install Docker and Docker Compose.
+- Deploy WordPress and MariaDB as connected services.
+- Set up storage to keep application and database data safe.
+- Protect the server using firewall rules and secure SSH access.
+- Create a Bash script for automatic database backups.
+- Schedule backups using Cron.
+- Document the setup and maintenance procedures.
 
 ## System Architecture
 
