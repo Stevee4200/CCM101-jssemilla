@@ -1,51 +1,186 @@
-# Final Reflection
+# Enterprise Cloud Architect
 
-## Introduction
+## Project Overview
 
-Finishing Missions 1 to 10 in CCM101 gave me a deeper understanding of cloud computing and its importance in modern technology. Throughout these activities, I gained knowledge about cloud services, hardware resources, networking, Linux, system security, and automation.
+**CloudNova** is a cloud computing project created for CCM101. Its main purpose is to demonstrate the process of building, deploying, managing, and securing a web application using virtualization and container technology.
 
-I learned that cloud computing involves more than saving files online or accessing applications. It also requires managing servers, configuring services, securing important information, and maintaining systems to ensure they operate correctly.
+The project uses Ubuntu Server as its main operating system and runs two connected services: WordPress and MariaDB. WordPress is responsible for displaying the website, while MariaDB manages and stores the website's information.
 
-## Learning Experience from Missions 1–9
+It also provides additional features such as network security, protected remote access, persistent storage, and scheduled database backups to help maintain the system.
 
-The first nine missions helped me become familiar with different areas of cloud computing through research and hands-on activities.
+## Project Objectives
 
-I studied the basic elements of cloud infrastructure, such as computing power, storage, and networking. I also explored major cloud platforms, including Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). Through these activities, I understood the importance of selecting suitable cloud resources based on the needs of a project.
+- Build and configure a Linux server using Oracle VirtualBox.
+- Establish network communication between the Windows laptop and the virtual machine.
+- Set up Docker and Docker Compose for container management.
+- Run WordPress and MariaDB using separate connected containers.
+- Configure persistent storage to protect application and database files.
+- Apply firewall configurations and secure SSH authentication.
+- Develop a Bash script to automate database backups.
+- Use Cron to run backup tasks on a scheduled basis.
+- Prepare documentation covering deployment, security, and system maintenance.
 
-I also practiced using Linux commands to examine system information, processor details, memory consumption, and disk capacity. This improved my understanding of Linux and how computer resources are monitored and managed on a server.
+## System Architecture
 
-Using PowerShell gave me additional experience with automation. I learned that scripts can reduce manual work and make repeated tasks easier and faster to perform.
+The CloudNova infrastructure consists of the following components:
 
-Aside from these technical skills, I also discovered the importance of system security, proper user permissions, firewall configurations, and efficient resource management.
+1. **Host Machine:** A Windows 11 laptop used to access and manage the virtual server.
+2. **VirtualBox:** The virtualization software responsible for running Ubuntu Server.
+3. **Ubuntu Server:** The main server environment where Docker and the application services operate.
+4. **Network:** NAT provides internet connectivity, while Host-only networking allows communication between the laptop and the virtual machine.
+5. **Firewall:** UFW and Docker firewall rules help manage and control incoming network traffic.
+6. **Docker:** Provides the environment for running and managing application containers.
+7. **WordPress:** Handles the website and its content.
+8. **MariaDB:** Manages the website's database and stored information.
+9. **Storage:** Docker volumes preserve application and database files even after containers are restarted.
+10. **Backup Automation:** Bash scripts and Cron work together to generate scheduled database backups.
 
-## Experience in Mission 10 – Enterprise Cloud Architect
+For a visual representation of the infrastructure, refer to [`architecture-diagram.png`](architecture-diagram.png).
 
-In Mission 10, I was able to combine the knowledge and skills I developed from the previous missions into one practical project.
+## Technologies Used
 
-I created **CloudNova**, a website hosting environment using Ubuntu Server through Oracle VirtualBox. I configured the network settings to allow my Windows laptop to communicate with the Ubuntu Server and access its WordPress website.
+| Component | Technology |
+|---|---|
+| Host Operating System | Windows 11 |
+| Virtualization Software | Oracle VirtualBox |
+| Server Operating System | Ubuntu Server 26.04.1 LTS |
+| Container Platform | Docker Engine 29.9.2 |
+| Container Management | Docker Compose 5.6.1 |
+| Website | WordPress |
+| Database | MariaDB 11.4 |
+| Firewall | UFW and iptables |
+| Automation | Bash and Cron |
+| Remote Access | OpenSSH |
+| SSH Authentication | ED25519 Key |
 
-I also used Docker and Docker Compose to deploy WordPress and MariaDB in separate but connected containers. During this activity, I learned that Docker volumes are important because they preserve application and database information even when containers are restarted or recreated.
+## Network Configuration
 
-For the security configuration, I set up UFW, limited SSH access, turned off password-based authentication, and configured SSH key authentication. I also applied Docker firewall rules to control access to the WordPress application.
+The following table presents the network settings used in the project.
 
-Another important task was developing an automated database backup system using Bash. The script creates database backups, compresses the files, verifies their validity, and deletes backup files older than seven days. I also configured Cron to execute the backup process automatically every day.
+| Interface | IP Address | Purpose |
+|---|---|---|
+| NAT (`enp0s3`) | `10.0.2.15/24` | Provides internet connectivity |
+| Host-only (`enp0s8`) | `192.168.56.103/24` | Connects the laptop and virtual server |
+| Windows Host-only Adapter | `192.168.56.1` | Allows the laptop to communicate with the server |
+| WordPress | `192.168.56.103:8080` | Provides access to the website |
 
-Through this project, I gained a better understanding of how server configuration, application deployment, networking, security, and automation work together.
+**WordPress Website Address:**
 
-## Challenges and Lessons Learned
+`http://192.168.56.103:8080`
 
-While completing the project, I experienced some difficulties with network configuration, SSH connections, and firewall settings.
+## Docker Services
 
-There were times when certain configurations affected communication between my Windows laptop and Ubuntu Server, as well as the incoming connections to Docker containers. To solve these problems, I had to review my settings, examine the commands, and perform several tests.
+The project uses two Docker containers that communicate with each other to operate the website.
 
-Developing the backup script also required additional learning. I needed to understand how to connect to the database, generate backup files, compress the data, and automate the process through Cron.
+| Container | Image | Function |
+|---|---|---|
+| `cloudnova-wordpress` | `wordpress:latest` | Hosts and runs the website |
+| `cloudnova-database` | `mariadb:11.4` | Handles website data and database operations |
 
-These experiences taught me that technical work requires patience, careful testing, and attention to detail. I also realized that understanding a command before running it is important, especially when changing security configurations or handling important data.
+Both services are connected through a Docker network called `cloudnova-network`, allowing them to exchange information.
+
+**Persistent Storage:**
+
+- `wordpress_data` – stores WordPress application files and related information.
+- `mariadb_data` – maintains the MariaDB database files.
+
+The MariaDB port is kept private and is not directly published to the host network.
+
+## Security Features
+
+Several security configurations were implemented to improve the protection of the CloudNova server:
+
+- Enabled UFW with a default policy that denies incoming connections.
+- Permitted outgoing network traffic.
+- Limited SSH connections to the Host-only network.
+- Disabled SSH password-based authentication.
+- Prevented direct root login through SSH.
+- Configured SSH public-key authentication for remote connections.
+- Applied Docker firewall rules to limit access to the WordPress website.
+- Restricted MariaDB communication to the internal Docker network.
+- Stored database credentials in a protected `.env` file instead of publishing them in the GitHub repository.
+
+## Backup Automation
+
+To protect important website information, CloudNova includes an automated MariaDB backup solution developed using Bash.
+
+**Script File:** `automation-script.sh`
+
+**Backup Directory:** `/opt/cloudnova/backups/`
+
+**Backup Schedule:** Daily at 2:00 AM UTC (10:00 AM Philippine Time).
+
+The backup script is designed to perform the following operations:
+
+- Generate a backup copy of the MariaDB database.
+- Compress the generated backup using Gzip.
+- Include the date and time in the backup filename.
+- Validate the generated backup file.
+- Automatically remove backup files that are more than seven days old.
+- Save backup activity and results in a log file.
+
+## GitHub Repository Structure
+
+The project files are organized as follows:
+
+```text
+Laboratory-10-Enterprise-Cloud-Architect/
+├── README.md
+├── architecture-diagram.png
+├── docker-compose.yml
+├── automation-script.sh
+├── operational-manual.md
+└── final-reflection.md
+```
+
+## Basic Deployment Commands
+
+Follow these commands to manage the CloudNova application.
+
+**1. Open the project directory:**
+
+```bash
+cd /opt/cloudnova
+```
+
+**2. Launch the application containers:**
+
+```bash
+sudo docker compose up -d
+```
+
+**3. Verify the running containers:**
+
+```bash
+sudo docker ps
+```
+
+**4. Check the application logs:**
+
+```bash
+sudo docker compose logs
+```
+
+**5. Access the WordPress website:**
+
+```text
+http://192.168.56.103:8080
+```
+
+For more detailed information about installation, deployment, security configurations, backup procedures, and maintenance, read the [`operational-manual.md`](operational-manual.md) file.
+
+## Project Deliverables
+
+The repository contains the following project outputs:
+
+- `architecture-diagram.png` – illustrates the overall infrastructure and network design.
+- `docker-compose.yml` – contains the configuration for deploying WordPress and MariaDB.
+- `automation-script.sh` – contains the Bash commands used for automated database backups.
+- `operational-manual.md` – provides instructions for deploying, securing, and maintaining the infrastructure.
+- `final-reflection.md` – presents the knowledge, experiences, and lessons gained throughout the CCM101 missions.
 
 ## Conclusion
 
-Overall, completing CCM101 improved my knowledge of cloud computing and gave me practical experience in managing a server environment.
+The CloudNova project shows how virtualization, containerization, networking, storage, security, and automation can be combined to create a functional cloud-based application environment.
 
-Throughout the ten missions, I developed skills in cloud platforms, Linux, PowerShell, virtualization, Docker, networking, cybersecurity, and automation.
-
-The CloudNova project demonstrates the knowledge I gained and the challenges I overcame during this course. Although I still have many things to explore and improve, the activities gave me a strong starting point for future IT projects and helped prepare me for my goal of becoming an IT professional.
+By integrating WordPress with MariaDB, the project provides a working website with persistent data storage, controlled network access, and scheduled database backups. It also demonstrates the practical skills developed throughout the CCM101 Cloud Computing activities.
